@@ -39,11 +39,16 @@
     <Content Include="css\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="Icons.tt">
+    <Content Include="FontAwesome.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FontAwesome.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FontAwesome.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

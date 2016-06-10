@@ -43,7 +43,6 @@ namespace FontAwesome.Constants
             definition = definition.NextMatch();
         }
     }
-
 #>
     }
 }
