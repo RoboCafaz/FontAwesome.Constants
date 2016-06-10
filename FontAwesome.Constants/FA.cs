@@ -1,6 +1,6 @@
 ﻿namespace FontAwesome.Constants
 {
-    public static class FontAwesome
+    public static class FA
     {
         public const string GLASS = @"\f000";
         public const string MUSIC = @"\f001";

@@ -63,7 +63,7 @@ namespace FontAwesome.Constants.Test
 
         private static FieldInfo[] GetGeneratedData()
         {
-            var fields = typeof(FontAwesome).GetFields();
+            var fields = typeof(FA).GetFields();
             Assert.IsNotNull(fields);
             Assert.IsTrue(fields.Length > 0);
             return fields;
