@@ -1,0 +1,49 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="EnvDTE" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ output extension=".cs" #>
+<#
+    var numbers = new string[]{"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+    var definitionRegex = new Regex("(\\.fa([^{}])+?):before(.+?)}", RegexOptions.IgnoreCase);
+    var textRegex = new Regex("(?<=content:\")(.+?)(?=\")", RegexOptions.IgnoreCase);
+    var headerRegex = new Regex("(?<=\\.fa-)(.+?)(?=:)", RegexOptions.IgnoreCase);
+
+    var dte = (EnvDTE.DTE) ((IServiceProvider) this.Host).GetService(typeof(EnvDTE.DTE));
+    var path = System.IO.Path.Combine(dte.ActiveDocument.Path, "css/font-awesome.min.css");
+    using (StreamReader sr = new StreamReader(path))
+    {
+        var line = sr.ReadToEnd();
+        var definition = definitionRegex.Match(line);
+#>
+namespace FontAwesome.Constants
+{
+    public static class FontAwesome
+    {
+<#
+        while(definition.Success) {
+            var text = textRegex.Match(definition.Value);
+            if(text.Success){
+                var header = headerRegex.Match(definition.Value);
+                while(header.Success) {
+                    var headerText = header.Value.Replace("-","_").Replace("fa","").Replace(".","");
+                    for(var i = 0 ; i < 10 ; i++) {
+                        headerText = headerText.Replace(i + "", numbers[i] + "");
+                    }
+                    headerText = headerText.ToUpper();
+#>
+        public const string <#= headerText #> = @"<#= text #>";
+<#
+                    header = header.NextMatch();
+                }
+            }
+            definition = definition.NextMatch();
+        }
+    }
+
+#>
+    }
+}
