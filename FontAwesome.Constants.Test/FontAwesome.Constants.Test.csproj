@@ -53,6 +53,12 @@
     <Compile Include="GenerationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FontAwesome.Constants\FontAwesome.Constants.csproj">
+      <Project>{14c1d31d-02cd-4543-a2de-c82c573d41d0}</Project>
+      <Name>FontAwesome.Constants</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
