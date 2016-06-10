@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -22,7 +23,7 @@ namespace FontAwesome.Constants.Test
             var textRegex = new Regex("(?<=content:\")(.+?)(?=\")", RegexOptions.IgnoreCase);
             var headerRegex = new Regex("(?<=\\.fa-)(.+?)(?=:)", RegexOptions.IgnoreCase);
 
-            var path = "css/font-awesome.min.css";
+            var path = "../../../FontAwesome.Constants/css/font-awesome.min.css";
             using (StreamReader sr = new StreamReader(path))
             {
                 var line = sr.ReadToEnd();
@@ -42,17 +43,18 @@ namespace FontAwesome.Constants.Test
                             }
                             headerText = headerText.ToUpper();
                             _fontDictionary.Add(headerText, text.Value);
-                            Debug.WriteLine($"Added {headerText}:{text.Value}");
                             header = header.NextMatch();
                         }
                     }
                     definition = definition.NextMatch();
                 }
             }
+            Assert.IsNotNull(_fontDictionary);
+            Assert.IsTrue(_fontDictionary.Count > 0);
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void EnsureConsistentGeneration()
         {
         }
     }
