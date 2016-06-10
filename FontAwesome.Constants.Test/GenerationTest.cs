@@ -78,7 +78,7 @@ namespace FontAwesome.Constants.Test
             var textRegex = new Regex("(?<=content:\")(.+?)(?=\")", RegexOptions.IgnoreCase);
             var headerRegex = new Regex("(?<=\\.fa-)(.+?)(?=:)", RegexOptions.IgnoreCase);
 
-            var path = "../../../FontAwesome.Constants/css/font-awesome.min.css";
+            var path = "css/font-awesome.min.css";
             using (StreamReader sr = new StreamReader(path))
             {
                 var line = sr.ReadToEnd();
