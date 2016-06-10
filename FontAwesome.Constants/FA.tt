@@ -27,6 +27,7 @@ namespace FontAwesome.Constants
         while(definition.Success) {
             var text = textRegex.Match(definition.Value);
             if(text.Success){
+                var actualText = text.Value.Replace(@"\f",@"\uf");
                 var header = headerRegex.Match(definition.Value);
                 while(header.Success) {
                     var headerText = header.Value.Replace("-","_").Replace("fa","").Replace(".","");
@@ -35,7 +36,7 @@ namespace FontAwesome.Constants
                     }
                     headerText = headerText.ToUpper();
 #>
-        public const string <#= headerText #> = @"<#= text #>";
+        public const string <#= headerText #> = "<#= actualText #>";
 <#
                     header = header.NextMatch();
                 }
