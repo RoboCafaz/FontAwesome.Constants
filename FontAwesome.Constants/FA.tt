@@ -23,6 +23,14 @@ namespace FontAwesome.Constants
 {
     public static class FA
     {
+        /// <summary>
+        /// If you are attempting to reference the FontAwesome icon constants provided here in XAML you will 
+        /// need to call this method in your app startup code to ensure the assembly gets loaded.
+        /// </summary>
+        public static void Init(){
+            var type = typeof(FA);
+        }
+
 <#
         while(definition.Success) {
             var text = textRegex.Match(definition.Value);
@@ -31,6 +39,9 @@ namespace FontAwesome.Constants
                 var header = headerRegex.Match(definition.Value);
                 while(header.Success) {
                     var headerText = header.Value.Replace("-","_").Replace("fa","").Replace(".","");
+                    if(headerText == ""){
+                        headerText = "F_A";
+                    }
                     for(var i = 0 ; i < 10 ; i++) {
                         headerText = headerText.Replace(i + "", numbers[i] + "");
                     }

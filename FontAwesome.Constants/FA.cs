@@ -2,6 +2,14 @@
 {
     public static class FA
     {
+        /// <summary>
+        /// If you are attempting to reference the FontAwesome icon constants provided here in XAML you will 
+        /// need to call this method in your app startup code to ensure the assembly gets loaded.
+        /// </summary>
+        public static void Init(){
+            var type = typeof(FA);
+        }
+
         public const string GLASS = "\uf000";
         public const string MUSIC = "\uf001";
         public const string SEARCH = "\uf002";
@@ -439,7 +447,7 @@
         public const string STUMBLEUPON = "\uf1a4";
         public const string DELICIOUS = "\uf1a5";
         public const string DIGG = "\uf1a6";
-        public const string PIED_PIPER = "\uf1a7";
+        public const string PIED_PIPER_PP = "\uf1a7";
         public const string PIED_PIPER_ALT = "\uf1a8";
         public const string DRUPAL = "\uf1a9";
         public const string JOOMLA = "\uf1aa";
@@ -489,6 +497,7 @@
         public const string LIFE_RING = "\uf1cd";
         public const string CIRCLE_O_NOTCH = "\uf1ce";
         public const string RA = "\uf1d0";
+        public const string RESISTANCE = "\uf1d0";
         public const string REBEL = "\uf1d0";
         public const string GE = "\uf1d1";
         public const string EMPIRE = "\uf1d1";
@@ -723,5 +732,13 @@
         public const string SNAPCHAT = "\uf2ab";
         public const string SNAPCHAT_GHOST = "\uf2ac";
         public const string SNAPCHAT_SQUARE = "\uf2ad";
+        public const string PIED_PIPER = "\uf2ae";
+        public const string FIRST_ORDER = "\uf2b0";
+        public const string YOAST = "\uf2b1";
+        public const string THEMEISLE = "\uf2b2";
+        public const string GOOGLE_PLUS_CIRCLE = "\uf2b3";
+        public const string GOOGLE_PLUS_OFFICIAL = "\uf2b3";
+        public const string F_A = "\uf2b4";
+        public const string FONT_AWESOME = "\uf2b4";
     }
 }
