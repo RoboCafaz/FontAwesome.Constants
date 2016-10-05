@@ -1,3 +1,7 @@
+## Nuget Things
+Nuget/lib/*
+Nuget/*.nupkg
+
 ## Fontawesome Things
 **/fonts/
 **/font-awesome.css
