@@ -35,11 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Content Include="css\font-awesome.min.css" />
-    <Content Include="FA.tt">
+    <None Include="css\font-awesome.min.css" />
+    <None Include="FA.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>FA.cs</LastGenOutput>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FA.cs">
