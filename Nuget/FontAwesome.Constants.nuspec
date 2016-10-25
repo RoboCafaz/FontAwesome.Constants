@@ -3,13 +3,13 @@
   <metadata>
     <id>FontAwesome.Constants</id>	
 	<title>FontAwesome Constants</title>
-    <version>1.3.0</version>
+    <version>1.4.7.0</version>
     <authors>Bobby Cafazzo (bcafazzo@nowintelligence.com)</authors>
     <owners>bcafazzo</owners>
     <licenseUrl>https://github.com/RoboCafaz/FontAwesome.Constants/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/RoboCafaz/FontAwesome.Constants</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes>Generating latest 4.3.0 version and </releaseNotes>
+    <releaseNotes>Generating latest 4.7.0 version awesomes. </releaseNotes>
     <description>Auto-generated string consants for FontAwesome icons.
 	
 	When using this in XAML files, please call FA.Init() in your application loading logic.
