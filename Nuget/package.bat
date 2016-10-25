@@ -1,1 +1,1 @@
-..\.nuget\nuget.exe pack FontaWesome.Constants.nuspec
+..\.nuget\nuget.exe pack FontAwesome.Constants.nuspec
